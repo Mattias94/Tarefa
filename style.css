@@ -1,4 +1,3 @@
-
 :root{
     --color-dark: rgb(14, 14, 14);
     --color-dark2: rgb(32, 32, 32);
@@ -12,26 +11,29 @@
 
 body{
     font-family: 'lato';
-    background-color: var(--color-dark);
+    background-color: #151515;
     color: var(--color-white);
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 4rem;
+    margin: 0;
+    padding: 0;
 }
 
 .content{
     display: flex;
     flex-direction: column;
     gap: 4rem;
+    padding: 10px;
 }
 
 .content--add-item{
     display: flex;
     align-items: center;
     gap: 1rem;
-    flex-wrap: wrap;
 }
+
 
 #input-new-task, #btn-new-task{
     border: none;
@@ -41,7 +43,7 @@ body{
 }
 
 #input-new-task{
-    width: 20rem;
+    width: 100%;
     border-radius: 6rem;
     text-align: center;
 }
@@ -54,7 +56,12 @@ body{
     height: 50px;
     cursor: pointer;
     transition: .4s;
-    margin: 1rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+#btn-new-task .add-text {
+    display: none;
 }
 
 #btn-new-task:hover{
@@ -70,11 +77,11 @@ body{
 
 #to-do-list li{
     list-style-type: none;
-    font-size: 1.4rem;
     text-transform: capitalize;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    font-size: 14px;
 }
 #to-do-list li:hover{
     background-color: var(--color-dark3);
@@ -102,3 +109,40 @@ transition: .4s;
     background-color: var(--color-green2);
 }
 
+@media all and (min-width: 768px) {
+    #btn-new-task {
+        width: 200px;
+        background: red;
+        border-radius: 0;
+    }
+
+    #btn-new-task .add-text {
+        display: block;
+    }
+
+    #to-do-list li {
+        font-size: 16px;
+    }
+}
+
+@media all and (min-width: 992px) {
+    #btn-new-task {
+        width: 200px;
+        background: blue;
+        border-radius: 0;
+    }
+    #to-do-list li {
+        font-size: 22px;
+    }
+}
+
+@media all and (min-width: 1200px) {
+    #btn-new-task {
+        width: 200px;
+        background: green;
+        border-radius: 0;
+    }
+    #to-do-list li {
+        font-size: 24px;
+    }
+}
